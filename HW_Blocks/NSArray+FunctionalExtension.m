@@ -42,10 +42,9 @@
 - (id)ex_sum:(id)initialValue withBlock:(id(^)(id sum, id obj))sumBlock
 {
     id result = initialValue;
-    NSLog(@"%@", result);
+    
     for (id obj in self) {
         result = sumBlock(result, obj);
-        NSLog(@"%@", result);
     }
     
     return result;
