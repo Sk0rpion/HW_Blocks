@@ -21,10 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self updateLabel:self.checkMapLabel successTest:[self checkMap]];
     [self updateLabel:self.checkFilterLabel successTest:[self checkFilter]];
     [self updateLabel:self.checkSumLabel successTest:[self checkSum]];
+    
+    
 }
 
 - (void)updateLabel:(UILabel*)lab successTest:(BOOL)success
