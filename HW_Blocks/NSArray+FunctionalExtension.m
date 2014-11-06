@@ -13,10 +13,10 @@
 - (NSArray*)ex_map:(id(^)(id obj))mapBlock
 {
     NSArray *newArray = [NSArray new];
-    NSMutableArray *secArr = [NSMutableArray new];
+    NSMutableArray *secArray = [NSMutableArray new];
     
     for (id obj in self) {
-        [secArr addObject:mapBlock(obj)];
+        [secArray addObject:mapBlock(obj)];
     }
     newArray = [secArray copy];
     
