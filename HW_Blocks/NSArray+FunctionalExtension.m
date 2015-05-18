@@ -12,17 +12,31 @@
 
 - (NSArray*)ex_map:(id(^)(id obj))mapBlock
 {
-    return nil;
+    NSMutableArray *map_arr = [[NSMutableArray alloc] init];
+    for (NSObject *i in self) {
+        [map_arr addObject:mapBlock(i)];
+    }
+    return map_arr;
 }
 
 - (NSArray*)ex_filter:(BOOL(^)(id obj))filterBlock
 {
-    return nil;
+    NSMutableArray *filt_arr = [[NSMutableArray alloc]init];
+    for (NSObject *i in self) {
+        if (filterBlock(i) == YES) {
+            [filt_arr addObject:i];
+        }
+    }
+    return filt_arr;
 }
 
 - (id)ex_sum:(id)initialValue withBlock:(id(^)(id sum, id obj))sumBlock
 {
-    return nil;
+    id result = initialValue;
+    for (NSObject *i in self) {
+        result = sumBlock(result, i);
+    }
+    return result;
 }
 
 @end
